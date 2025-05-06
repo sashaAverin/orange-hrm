@@ -1,8 +1,14 @@
 from base.base_test import BaseTest
+import allure
+import pytest
 import random
 
+@allure.feature("Admin features functionality")
 class TestAddEmployeePage(BaseTest):
 
+    @allure.title("Create a new user")
+    @allure.severity("Critical")
+    @pytest.mark.adminFeatures
     def test_add_new_employee(self):
         self.login_page.open()
         self.login_page.is_opened()
@@ -24,3 +30,4 @@ class TestAddEmployeePage(BaseTest):
         self.add_employee_page.confirm_created_password(self.data.EMPLOYEE_PASSWORD)
         self.add_employee_page.click_on_save_button()
         self.add_employee_page.check_success_status("Success", "Новый пользователь не создан")
+        self.add_employee_page.make_screenshot("Success")

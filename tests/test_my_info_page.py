@@ -1,7 +1,13 @@
 from base.base_test import BaseTest
+import allure
+import pytest
 
+@allure.feature("User features functionality")
 class TestMyInfoPage(BaseTest):
 
+    @allure.title("Changing of personal information")
+    @allure.severity("Major")
+    @pytest.mark.usefeatures
     def test_change_profile_info(self):
         self.login_page.open()
         self.login_page.is_opened()
@@ -15,3 +21,4 @@ class TestMyInfoPage(BaseTest):
         self.my_info_page.upload_profile_photo("/source/avatar.png")
         self.my_info_page.click_on_save_button()
         self.my_info_page.check_success_status("Success", "Изменения не сохранены")
+        self.my_info_page.make_screenshot("Success")

@@ -7,6 +7,7 @@ from pages.add_employee_page import AddEmployeePage
 from pages.my_info_page import MyInfoPage
 
 class BaseTest:
+
     data: Data
 
     login_page: LoginPage
@@ -19,7 +20,6 @@ class BaseTest:
     def setup(self, request, driver):
         request.cls.driver = driver
         request.cls.data = Data()
-        request.cls.login_page = LoginPage(driver)
         request.cls.login_page = LoginPage(driver)
         request.cls.pim_page = PimPage(driver)
         request.cls.dashboard_page = DashboardPage(driver)
