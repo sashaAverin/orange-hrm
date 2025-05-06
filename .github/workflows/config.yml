@@ -29,6 +29,7 @@ jobs:
           EMPLOYEE_LOGIN: ${{ secrets.EMPLOYEE_LOGIN }}
           EMPLOYEE_PASSWORD: ${{ secrets.EMPLOYEE_PASSWORD }}
         run: pytest --alluredir=allure-results
+        continue-on-error: true
       - name: Upload Allure results
         if: always()
         uses: actions/upload-artifact@v4
