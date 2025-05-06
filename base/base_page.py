@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class BasePage:
 
     # locators
+    PIM_LINK = ("xpath", "//span[text()='PIM']")
     SUCCESS_STATUS = ("xpath", "//p[text()='Success']")
 
     def __init__(self, driver):
@@ -16,6 +17,9 @@ class BasePage:
 
     def is_opened(self):
         self.wait.until(EC.url_to_be(self.PAGE_URL))
+
+    def open_pim_page(self):
+        self.wait.until(EC.element_to_be_clickable(self.PIM_LINK)).click()
 
     def check_success_status(self, text, error_message):
         success_status = self.wait.until(EC.visibility_of_element_located(self.SUCCESS_STATUS))
