@@ -10,6 +10,8 @@ class BasePage:
     PROFILE_MENU_BUTTON = ("xpath", "//span[@class='oxd-userdropdown-tab']")
     LOGOUT_BUTTON = ("xpath", "//a[text()='Logout']")
     SUCCESS_STATUS = ("xpath", "//p[text()='Success']")
+    LOAD_SPINNER = ("xpath", "//div[@class='oxd-loading-spinner']")
+    POPUP_DELETE_BUTTON = ("xpath", "//div[@class='orangehrm-modal-footer']/button[2]")
 
     def __init__(self, driver):
         self.driver: WebDriver = driver
@@ -36,3 +38,9 @@ class BasePage:
     def check_success_status(self, text, error_message):
         success_status = self.wait.until(EC.visibility_of_element_located(self.SUCCESS_STATUS))
         assert success_status.text == text, error_message
+
+    def wait_disappear_of_spinner(self):
+        self.wait.until(EC.invisibility_of_element_located(self.LOAD_SPINNER))
+
+    def click_on_popup_delete_button(self):
+        self.wait.until(EC.element_to_be_clickable(self.POPUP_DELETE_BUTTON)).click()

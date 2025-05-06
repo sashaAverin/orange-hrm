@@ -1,6 +1,6 @@
 from base.base_test import BaseTest
 
-class TestChangeProfileInfo(BaseTest):
+class TestMyInfoPage(BaseTest):
 
     def test_change_profile_info(self):
         self.login_page.open()
