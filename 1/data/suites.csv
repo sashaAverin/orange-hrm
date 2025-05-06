@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","8882","Remove user","tests","Tue May 06 05:52:27 GMT 2025","passed","Tue May 06 05:52:36 GMT 2025","TestPimPage","test_pim_page","",""
+"","9791","Create a new user","tests","Tue May 06 05:52:03 GMT 2025","passed","Tue May 06 05:52:13 GMT 2025","TestAddEmployeePage","test_add_employee_page","",""
+"","3043","Login in system","tests","Tue May 06 05:52:14 GMT 2025","passed","Tue May 06 05:52:17 GMT 2025","TestLoginPage","test_login_page","",""
+"","9353","Changing of personal information","tests","Tue May 06 05:52:17 GMT 2025","passed","Tue May 06 05:52:27 GMT 2025","TestMyInfoPage","test_my_info_page","",""
